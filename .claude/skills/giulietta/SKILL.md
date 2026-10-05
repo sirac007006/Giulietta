@@ -106,6 +106,10 @@ Windows 10 + VS Code. `vcan`/`socketcan` rade samo na Linuxu, pa na Windowsu bac
 - Tabela CAN signala se vodi od prvog dana.
 - **Pre lemljenja proveriti tabelu zauzetih GPIO pinova** (CAN HAT, UPS, PC817, 1-Wire, I2C, UART).
 
+## Repo
+
+GitHub: https://github.com/sirac007006/Giulietta (javan, grana `main`). Korisnik je svesno izabrao da i `.docx` dokumenti budu javni.
+
 ## Saradnja
 
 - Korisnik piše srpski (latinica, ekavica). Dokumenti su ijekavski. Odgovara se na srpskom.
