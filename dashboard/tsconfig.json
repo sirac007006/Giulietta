@@ -1,0 +1,8 @@
+{
+  "extends": "@react-native/typescript-config",
+  "compilerOptions": {
+    "paths": { "@giulietta/protocol": ["../packages/protocol/src/index.ts"] }
+  },
+  "include": ["**/*.ts", "**/*.tsx", "../packages/protocol/src/**/*.ts"],
+  "exclude": ["**/node_modules", "**/Pods"]
+}

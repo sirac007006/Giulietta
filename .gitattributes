@@ -1,0 +1,7 @@
+# Fajlovi koji se izvršavaju na Linuxu (Pi) moraju imati LF — CRLF lomi bash i systemd.
+*.sh       text eol=lf
+*.service  text eol=lf
+gradlew    text eol=lf
+*.docx     binary
+*.jar      binary
+*.keystore binary

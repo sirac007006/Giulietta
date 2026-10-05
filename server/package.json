@@ -1,0 +1,30 @@
+{
+  "name": "@giulietta/server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --disable-warning=ExperimentalWarning src/index.ts",
+    "start": "node --disable-warning=ExperimentalWarning dist/server.js",
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node22 --format=esm --outfile=dist/server.js --external:socketcan --external:pg-native --banner:js=\"import{createRequire}from'module';const require=createRequire(import.meta.url);\"",
+    "test": "vitest run",
+    "typecheck": "tsc -p ."
+  },
+  "dependencies": {
+    "@giulietta/protocol": "*",
+    "pg": "^8.23.1",
+    "ws": "^8.18.0"
+  },
+  "optionalDependencies": {
+    "socketcan": "^4.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/pg": "^8.23.1",
+    "@types/ws": "^8.5.13",
+    "esbuild": "^0.28.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^5.0.0"
+  }
+}

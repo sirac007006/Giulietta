@@ -1,0 +1,9 @@
+[
+  { "id": "coolant_hot", "label": "Temperatura motora visoka", "level": "critical", "signal": "coolant_temp", "op": ">", "on": 108, "off": 103, "delayMs": 3000, "sound": "critical" },
+  { "id": "egt_high", "label": "EGT visok", "level": "warning", "signal": "egt", "op": ">", "on": 750, "off": 700, "delayMs": 2000, "sound": "warning" },
+  { "id": "cold_rev", "label": "Motor hladan — ne vrti", "level": "warning", "signal": "rpm", "op": ">", "on": 3000, "off": 2700, "delayMs": 500, "and": { "signal": "coolant_temp", "op": "<", "value": 60 }, "sound": "warning" },
+  { "id": "shift", "label": "Promijeni brzinu", "level": "info", "signal": "rpm", "op": ">", "on": 4200, "off": 3800, "delayMs": 0, "sound": "shift" },
+  { "id": "fuel_low", "label": "Malo goriva", "level": "warning", "signal": "fuel_level", "op": "<", "on": 7, "off": 9, "delayMs": 10000, "sound": "warning" },
+  { "id": "speed_limit", "label": "Prekoračenje brzine", "level": "warning", "signal": "speed", "op": ">", "on": 130, "off": 125, "delayMs": 2000, "sound": "warning" },
+  { "id": "battery_low", "label": "Napon akumulatora nizak", "level": "warning", "signal": "battery_voltage", "op": "<", "on": 12.2, "off": 12.6, "delayMs": 10000, "sound": "warning" }
+]

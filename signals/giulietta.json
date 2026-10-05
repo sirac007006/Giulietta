@@ -1,0 +1,49 @@
+{
+  "_note": "IZMIŠLJENE VRIJEDNOSTI za razvoj bez auta. Pravi ID-jevi, bajtovi i faktori se otkrivaju u Fazi 3 i upisuju OVDJE — kod se ne mijenja. Konvencija bitova: vidi packages/protocol/src/index.ts (Endianness).",
+  "messages": {
+    "0x0FA": {
+      "name": "engine_data",
+      "length": 8,
+      "staleMs": 500,
+      "signals": [
+        { "name": "rpm", "label": "Obrtaji", "startBit": 0, "length": 16, "factor": 0.25, "unit": "o/min", "min": 0, "max": 5000 },
+        { "name": "throttle", "label": "Gas", "startBit": 16, "length": 8, "factor": 0.4, "unit": "%", "min": 0, "max": 100 },
+        { "name": "boost", "label": "Boost", "startBit": 24, "length": 8, "factor": 0.01, "unit": "bar", "min": 0, "max": 1.6 }
+      ]
+    },
+    "0x1F0": {
+      "name": "vehicle_speed",
+      "length": 8,
+      "staleMs": 500,
+      "signals": [
+        { "name": "speed", "label": "Brzina", "startBit": 0, "length": 16, "factor": 0.01, "unit": "km/h", "min": 0, "max": 220 }
+      ]
+    },
+    "0x2E0": {
+      "name": "engine_temps",
+      "length": 8,
+      "staleMs": 2000,
+      "signals": [
+        { "name": "coolant_temp", "label": "Rashladna", "startBit": 0, "length": 8, "offset": -40, "unit": "°C", "min": 40, "max": 130 },
+        { "name": "intake_temp", "label": "Usis", "startBit": 8, "length": 8, "offset": -40, "unit": "°C", "min": -20, "max": 80 },
+        { "name": "egt", "label": "EGT", "startBit": 16, "length": 16, "factor": 0.1, "unit": "°C", "min": 0, "max": 900 }
+      ]
+    },
+    "0x3A0": {
+      "name": "fuel",
+      "length": 4,
+      "staleMs": 5000,
+      "signals": [
+        { "name": "fuel_level", "label": "Gorivo", "startBit": 0, "length": 8, "factor": 0.5, "unit": "L", "min": 0, "max": 60 }
+      ]
+    },
+    "0x3B0": {
+      "name": "electrical",
+      "length": 4,
+      "staleMs": 5000,
+      "signals": [
+        { "name": "battery_voltage", "label": "Akumulator", "startBit": 0, "length": 8, "factor": 0.1, "unit": "V", "min": 10, "max": 16 }
+      ]
+    }
+  }
+}

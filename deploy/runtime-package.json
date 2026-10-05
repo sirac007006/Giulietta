@@ -1,0 +1,9 @@
+{
+  "name": "giulietta-server-runtime",
+  "private": true,
+  "type": "module",
+  "description": "Na Pi-ju zamjenjuje server/package.json: dist/server.js je bundle, treba samo native socketcan.",
+  "dependencies": {
+    "socketcan": "4.3.2"
+  }
+}

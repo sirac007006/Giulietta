@@ -1,0 +1,27 @@
+# /etc/systemd/system/giulietta.service — instalira ga setup-pi.sh
+[Unit]
+Description=Giulietta CAN server
+After=network.target
+
+[Service]
+Type=simple
+User=__USER__
+WorkingDirectory=/home/__USER__/giulietta/server
+# CAN interfejs se diže prije servera. "+" = kao root, "-" = ne ruši servis ako je
+# interfejs već gore ili HAT još nije spojen (server tada javi CAN error na dashboardu).
+ExecStartPre=-+/usr/sbin/ip link set can0 up type can bitrate 500000
+ExecStart=/usr/bin/node --disable-warning=ExperimentalWarning dist/server.js
+Environment=NODE_ENV=production
+Environment=CAN_SOURCE=socketcan
+Environment=CAN_IFACE=can0
+Environment=DATA_DIR=/home/__USER__/giulietta/data
+# PG_URL=postgres://... i ostale tajne idu ovdje (nije u git-u)
+EnvironmentFile=-/etc/giulietta.env
+Restart=always
+RestartSec=5
+# Uredno gašenje: server na SIGTERM radi flush loga vožnje
+KillSignal=SIGTERM
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target
